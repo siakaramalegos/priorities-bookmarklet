@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gong Transcript Bookmarklet</title>
+    <style>
+        body {
+            max-width: 600px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333;
+        }
+        a.button {
+            display: inline-block;
+            border: 1px solid rebeccapurple;
+            background-color: #eee5f8;
+            color: rebeccapurple;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            margin: 1rem 0;
+        }
+        a.button:hover {
+            box-shadow: 8px 8px rebeccapurple;
+        }
+        a {
+            color: rebeccapurple;
+            text-decoration: none;
+            border-bottom: 1px solid rebeccapurple;
+        }
+        a:hover {
+            border-bottom: 3px solid rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+    <h1>Loading Priorities Scanner Bookmarklet</h1>
+    <p>See a handy list of all the fetchpriorities, preloads, prefetches, and preconnects on a webpage.</p>
+    <p>Drag this button to your bookmarks bar. Then when you're on the page you want to scan, click the button to generate the list. It will appear above the webpage body content.</p>
+    <a class="button" role="button" href="javascript:(function(){const container=document.createElement(&quot;div&quot;),fetchpriorityList=document.querySelectorAll(&quot;[fetchpriority]&quot;),heading=document.createElement(&quot;p&quot;);heading.innerHTML=&quot;Elements with fetchpriority set:&quot;;const ol=document.createElement(&quot;ol&quot;);fetchpriorityList.forEach((e=>{const t=document.createElement(&quot;li&quot;),n=e.href?`with href=&quot;${e.href}&quot;`:`with src=&quot;${e.src}&quot;`;t.innerHTML=`${e.nodeName} ${n}`,ol.append(t)})),container.append(heading),container.append(ol);const CHECKS=[{selector:'link[rel=&quot;preload&quot;]',headingText:&quot;Preloaded assets:&quot;},{selector:'link[rel=&quot;prefetch&quot;]',headingText:&quot;Prefetched assets:&quot;},{selector:'link[rel=&quot;preconnect&quot;]',headingText:&quot;Preconnected domains:&quot;},{selector:'link[rel=&quot;dns-prefetch&quot;]',headingText:&quot;DNS-prefetched domains:&quot;}];CHECKS.forEach((e=>{const t=document.querySelectorAll(e.selector),n=document.createElement(&quot;p&quot;);n.innerHTML=e.headingText;const r=document.createElement(&quot;ol&quot;);t.forEach((e=>{const t=document.createElement(&quot;li&quot;);t.innerHTML=e.href,r.append(t)})),container.append(n),container.append(r)})),document.querySelector(&quot;body&quot;).prepend(container);}());">Priorities Scanner</a>
+    <p><small>Made with 💜 by <a href="https://sia.codes">Sia</a>. See <a href="https://github.com/siakaramalegos/gong-transcript">source code</a>.</small></p>
+</body>
+</html>
